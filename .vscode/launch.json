@@ -10,7 +10,7 @@
             "request": "launch",
             "type": "chrome",
             "url": "http://localhost:8080",
-            "file": "C:\\Users\\60707\\Documents\\CodeCademyTests\\JSPyBridge1\\index.html"
+            "file": "C:\\Users\\60707\\Documents\\CodeCademyTests\\BazaarFlipper\\index.html"
         },
 
         

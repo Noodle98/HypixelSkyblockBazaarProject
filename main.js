@@ -1,20 +1,15 @@
 // loadJSON method to open the JSON file.
-function loadJSON(path, success, successArgs) {
+function loadJSON(path) {
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          success(JSON.parse(xhr.responseText), successArgs);
-        }
-        else {
-          console.log('ERROR: API IS NOT FUNCTIONING');
-        }
-      }
-    };
     xhr.open('GET', path, true);
     xhr.send();
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        return JSON.parse(this.responseText);
+      }
   }
-  
+}
 // myData function to parse the JSON API data,
 // And use it to alter the HTML code
 function myData(Data, itemName)
@@ -34,8 +29,12 @@ function speak() {
     let userInput = document.getElementById('item_input').value.toLowerCase();
     console.log(userInput);
 
-    loadJSON("https://api.hypixel.net/skyblock/bazaar", myData, userInput);
+    var data = loadJSON("https://api.hypixel.net/skyblock/bazaar");
+    console.log(data);
 
 }
 
 
+/* Website til loadJSON funktionen:
+https://www.educative.io/answers/how-to-read-a-json-file-from-a-url-in-javascript
+*/
