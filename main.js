@@ -1,18 +1,21 @@
 // loadJSON method to open the JSON file.
-function loadJSON(path) {
+function loadJSON(path, success, successArgs) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', path, true);
     xhr.send();
 
     xhr.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        return JSON.parse(this.responseText);
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        success(JSON.parse(xhr.responseText), successArgs);
       }
-  }
+      else {
+        document.getElementById('buy_order_price').innerHTML = 'There was an error getting data, try again later';
+      }
+    }
 }
-// myData function to parse the JSON API data,
+// mainData function to parse the JSON API data,
 // And use it to alter the HTML code
-function myData(Data, itemName)
+function mainData(Data, itemName)
 {
     console.log(Data['products'][itemName.toUpperCase()]['sell_summary'][0]['pricePerUnit']);
     let buyOrderPrice = Data['products'][itemName.toUpperCase()]['sell_summary'][0]['pricePerUnit'];
@@ -23,14 +26,14 @@ function myData(Data, itemName)
 }
 // speak() function which is called by the HTML code,
 // And parses user input, and then passes it along to
-// loadJSON function, in order to be used in myData function,
+// loadJSON function, in order to be used in mainData function,
 // To gather the correct data from the API 
 function speak() {
     let userInput = document.getElementById('item_input').value.toLowerCase();
     console.log(userInput);
 
-    var data = loadJSON("https://api.hypixel.net/skyblock/bazaar");
-    console.log(data);
+    loadJSON("https://api.hypixel.net/skyblock/bazaar", mainData, userInput);
+    
 
 }
 

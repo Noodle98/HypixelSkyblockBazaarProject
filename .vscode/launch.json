@@ -6,12 +6,20 @@
     "configurations": [
 
         {
-            "name": "Launch Chrome",
+            "name": "Skole Launch",
             "request": "launch",
             "type": "chrome",
             "url": "http://localhost:8080",
             "file": "C:\\Users\\60707\\Documents\\CodeCademyTests\\BazaarFlipper\\index.html"
         },
+
+        {
+            "name": "Hjem Launch",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:8080",
+            "file": "C:\\Users\\Jonas\\Documents\\VSCodeStuff\\BazaarFlipper\\HypixelSkyblockBazaarProject\\index.html"
+        }
 
         
         
