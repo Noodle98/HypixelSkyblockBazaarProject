@@ -19,9 +19,16 @@
             "type": "chrome",
             "url": "http://localhost:8080",
             "file": "C:\\Users\\Jonas\\Documents\\VSCodeStuff\\BazaarFlipper\\HypixelSkyblockBazaarProject\\index.html"
-        }
+        },
 
-        
-        
+        {
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/app.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        }
     ]
 }

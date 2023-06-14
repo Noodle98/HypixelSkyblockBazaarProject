@@ -302,8 +302,8 @@ raw_items = {
 "MUTANT_NETHER_STALK": "Mutant Nether Wart",
 "POWER_CRYSTAL": "Power Crystal",
 "YOGGIE": "Yoggie",
-"SLUDGE_JUICE": "Sludge Juice"
-
+"SLUDGE_JUICE": "Sludge Juice",
+"TIGHTLY_TIED_HAY_BALE": "Tightly Tied Hay Bale",
 }
 
 items_sorted = {}

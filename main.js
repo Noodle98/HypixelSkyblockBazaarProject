@@ -1,3 +1,5 @@
+import itemNames from './bazaarItems.js';
+const bazaarItemNames = itemNames;
 // loadJSON method to open the JSON file.
 function loadJSON(path, success, successArgs) {
     var xhr = new XMLHttpRequest();
@@ -29,15 +31,18 @@ function mainData(Data, itemName)
 // loadJSON function, in order to be used in mainData function,
 // To gather the correct data from the API 
 function speak() {
+  
+  console.log('hello');
     let userInput = document.getElementById('item_input').value.toLowerCase();
     console.log(userInput);
 
     loadJSON("https://api.hypixel.net/skyblock/bazaar", mainData, userInput);
     
-
+    console.log(bazaarItemNames['Diamond']);
+  document.getElementById('buy_order_price').innerHTML = userInput;
+    
 }
-
-
+document.querySelector('#item_input_button').addEventListener('click', speak);
 /* Website til loadJSON funktionen:
 https://www.educative.io/answers/how-to-read-a-json-file-from-a-url-in-javascript
 */
