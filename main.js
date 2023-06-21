@@ -44,6 +44,7 @@ function speak() {
   //document.getElementById('buy_order_price').innerHTML = userInput;
     
 }
+
 document.querySelector('#item_input_button').addEventListener('click', speak);
 /* Website til loadJSON funktionen:
 https://www.educative.io/answers/how-to-read-a-json-file-from-a-url-in-javascript

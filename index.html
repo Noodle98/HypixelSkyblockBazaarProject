@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script async type="module" src="bazaarItems.js"></script>
-<script async type="module" src="main.js"></script>
-<script async type="module" src="parseUserInput.js"></script>
-<script async type="module" src="checkForNewBazaarItems.js"></script>
+<script async type="module" src="./bazaarItems.js"></script>
+<script async type="module" src="./main.js"></script>
+<script async type="module" src="./parseUserInput.js"></script>
+<script async type="module" src="./checkForNewBazaarItems.js"></script>
 <!---script type="module" src="./userInputAndStart.js" defer></script -->
+<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+<div class="topnav">
+  <a class="active" href="./index.html">Bazaar Price Checker</a>
+  <a href="./moneyMethods.html">Money Making Methods</a>
+  <!--a href="#contact">Contact</a>
+  <a href="#about">About</a-->
+</div>
 <h1>Welcome to Noodle's Hypixel Skyblock Bazaar profit calculator</h1>
-<p>Please enter an item name and click on the button underneath</p>
+<p>Please enter an item name and click the Search button.</p>
 <input type="text" id="item_input">
-<button id="item_input_button" type="button">Submit</button>
+<button id="item_input_button" type="button">Search</button>
 <p id="buy_order_price"></p>
 <p id="sell_offer_price"></p>
 <h3>Click the button below to check for any new bazaar items, that need to be added to this website's data</h3>
