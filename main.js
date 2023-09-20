@@ -45,7 +45,21 @@ function speak() {
     
 }
 
+function callOnLoad() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+
+function switchLighting(){
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  
+}
+
+window.onload = callOnLoad;
 document.querySelector('#item_input_button').addEventListener('click', speak);
+document.querySelector("#switchLighting").addEventListener('click', switchLighting);
+
 /* Website til loadJSON funktionen:
 https://www.educative.io/answers/how-to-read-a-json-file-from-a-url-in-javascript
 */

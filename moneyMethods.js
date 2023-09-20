@@ -29,31 +29,36 @@ function onLoadPrices(data) {
     const fineAmethystBuyOrderPrice = data['products']["FINE_AMETHYST_GEM"]['sell_summary'][0]['pricePerUnit'];
     const sludgeJuiceBuyOrderPrice = data['products']["SLUDGE_JUICE"]['sell_summary'][0]['pricePerUnit'];
 
-    const totalCost = Math.floor((4 * fineJadeBuyOrderPrice) + (4 * fineAmberBuyOrderPrice) + (4 * fineSapphireBuyOrderPrice) + (4 * fineAmethystBuyOrderPrice) + (320 * sludgeJuiceBuyOrderPrice));
+    const totalCost = Math.floor((4 * fineJadeBuyOrderPrice) + (4 * fineAmberBuyOrderPrice) + (4 * fineSapphireBuyOrderPrice) + (4 * fineAmethystBuyOrderPrice) + (320 * sludgeJuiceBuyOrderPrice))
     
-    const gemstoneMixtureSellOfferPrice = Math.floor(data['products']["GEMSTONE_MIXTURE"]['buy_summary'][0]['pricePerUnit']);
+    const gemstoneMixtureSellOfferPrice = Math.floor(data['products']["GEMSTONE_MIXTURE"]['buy_summary'][0]['pricePerUnit'])
 
     const gemstoneMixtureProfit = Math.floor(gemstoneMixtureSellOfferPrice - totalCost);
-    document.getElementById("GemstoneMixtureCostToCraft").innerHTML = `Current total material cost to buy order: ${totalCost} coins.`;
-    document.getElementById("GemstoneMixtureValue").innerHTML = `Current Gemstone Mixture sell offer price: ${gemstoneMixtureSellOfferPrice} coins.`;
-    document.getElementById("GemstoneMixtureProfit").innerHTML = `Current fine jade gemstone price: ${fineJadeBuyOrderPrice}`;//`Current profit: ${gemstoneMixtureProfit} coins.`;
+    document.getElementById("GemstoneMixtureCostToCraft").innerHTML = `Current total material cost to buy order: ${totalCost.toLocaleString("en-US")} coins.`;
+    document.getElementById("GemstoneMixtureValue").innerHTML = `Current Gemstone Mixture sell offer price: ${gemstoneMixtureSellOfferPrice.toLocaleString("en-US")} coins.`;
+    document.getElementById("GemstoneMixtureProfit").innerHTML = `Current profit: ${gemstoneMixtureProfit.toLocaleString("en-US")} coins.`;
 }
 
-
-
   function callOnLoad() {
+    // Loads the onLoad prices
     loadJSON("https://api.hypixel.net/skyblock/bazaar", onLoadPrices);
-    const buyOrderPara = document.querySelector('#emptyDiv1');
-    buyOrderPara.innerHTML = "Hejsa med digsa";
-    document.querySelector('#emptyDiv1').append(buyOrderPara);
+    // Loads dark mode by default
+    var element = document.body;
+    element.classList.toggle("dark-mode");
   }
-
+//
 function gemstoneCalc() {
     var amountInput = document.getElementById("GemstoneMixtureAmount").value;
     console.log(amountInput);
     //gemstoneMixtureCalc(amountInput);
     loadJSON("https://api.hypixel.net/skyblock/bazaar", gemstoneMixtureCalc, amountInput);
 }
+function switchLighting(){
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  
+}
 
 window.onload = callOnLoad;
 document.querySelector("#GemstoneMixtureButton").addEventListener('click', gemstoneCalc);
+document.querySelector("#switchLighting").addEventListener('click', switchLighting);
