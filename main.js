@@ -24,8 +24,8 @@ function mainData(Data, itemName, rawUserInput)
     let buyOrderPrice = Data['products'][itemName]['sell_summary'][0]['pricePerUnit'];
     let sellOfferPrice = Data['products'][itemName]['buy_summary'][0]['pricePerUnit'];
 
-    document.getElementById('buy_order_price').innerHTML = 'Current buy order (instant sell) price for ' + rawUserInput + ' is: ' + buyOrderPrice + ' coins.';
-    document.getElementById('sell_offer_price').innerHTML = 'Current sell offer (instant buy) price for ' + rawUserInput + ' is: ' + sellOfferPrice + ' coins.';
+    document.getElementById('buy_order_price').innerHTML = `Current buy order (instant sell) price for ${rawUserInput} is: ${buyOrderPrice.toLocaleString("en-US")} coins.`;
+    document.getElementById('sell_offer_price').innerHTML = `Current sell offer (instant buy) price for ${rawUserInput} is: ${sellOfferPrice.toLocaleString("en-US")} coins.`;
   }
 // speak() function which is called by the HTML code,
 // And parses user input, and then passes it along to
@@ -59,6 +59,8 @@ function switchLighting(){
 window.onload = callOnLoad;
 document.querySelector('#item_input_button').addEventListener('click', speak);
 document.querySelector("#switchLighting").addEventListener('click', switchLighting);
+//document.querySelector("#switchToMoneyMethods").addEventListener('click', switchtoMoneyMethods);
+
 
 /* Website til loadJSON funktionen:
 https://www.educative.io/answers/how-to-read-a-json-file-from-a-url-in-javascript

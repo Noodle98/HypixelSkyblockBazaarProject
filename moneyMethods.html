@@ -24,6 +24,9 @@
    a:hover {color: #0cfce8;}  
    a:active {color: #50fc0c;}  
 
+   #switchLighting {
+      float: right;
+    }
   
 </style>
 </head>
@@ -37,33 +40,34 @@
 </div>
 
 <h1>Money making methods using bazaar items</h1>
-<h2>Forge: Gemstone Mixture</h2>
-<h3>Prerequisites:</h4>
-<ul>
+<div id="gemstoneMixtureDiv">
+  <h2 class="methodName">Forge: Gemstone Mixture</h2>
+  <h3>Prerequisites:</h4>
+  <ul class="ul-prerequisites">
     <li>Dwarven Mines unlocked</li>
     <li>Heart of the Mountain Tier 4</li>
-</ul>
-<h3>Effort level: Low</h3>
-<p class="itemInformation">
-Gemstone Mixture is a Forge item, forged at Forge Basin in the Dwarven Mines.<br>
-I highly recommend getting the travel scroll to the forge, called:<br>
-"Travel Scroll to the Dwarven Forge", to make forging these more seemless.<br>
-You can then just type "/warpforge" (without quotations) in chat.<br><br></p>
+  </ul>
+  <h3 class="effortLevel">Effort level: Low</h3>
+  <p class="itemInformation">
+  Gemstone Mixture is a Forge item, forged at Forge Basin in the Dwarven Mines.<br>
+  I highly recommend getting the travel scroll to the forge, called:<br>
+  "Travel Scroll to the Dwarven Forge", to make forging these more seemless.<br>
+  You can then just type "/warpforge" (without quotations) in chat.<br><br></p>
 
-<p id="gemMixToMakeX">To make 1x Gemstone Mixture, you need to buy order the following materials at the bazaar:</p>
-<ul>
+  <p id="gemMixToMakeX">To make 1x Gemstone Mixture, you need to buy order the following materials at the bazaar:</p>
+  <ul class="materialsToBuyOrder">
     <li id="gemMixJade">4x Fine Jade Gemstone</li>
     <li id="gemMixAmber">4x Fine Amber Gemstone</li>
     <li id="gemMixSapphire">4x Fine Sapphire Gemstone</li>
     <li id="gemMixAmethyst">4x Fine Amethyst Gemstone</li>
     <li id="gemMixSludgeJuice">320x Sludge Juice</li>
-</ul>
-<div id="emptyDiv1"></div>
-<p id="GemstoneMixtureCostToCraft"></p>
-<p id="GemstoneMixtureValue"></p>
-<p id="GemstoneMixtureProfit"></p>
-<p> Input the amount of Gemstone Mixtures you want to craft in the input field below, and click "Calculate".</p>
-<input type="number" id="GemstoneMixtureAmount">
-<button type="button" id="GemstoneMixtureButton">Calculate</button>
+  </ul>
+  <p class="costValueProfit" id="GemstoneMixtureCostToCraft"></p>
+  <p class="costValueProfit" id="GemstoneMixtureValue"></p>
+  <p class="costValueProfit" id="GemstoneMixtureProfit"></p>
+  <p class="methodInputPromt"> Input the amount of Gemstone Mixtures you want to craft in the input field below, and click "Calculate".</p>
+  <input type="number" id="GemstoneMixtureAmount">
+  <button type="button" id="GemstoneMixtureButton">Calculate</button>
+</div>
 </body>
 </html>
