@@ -36,19 +36,22 @@ function onLoadPrices(data) {
     const gemstoneMixtureProfit = Math.floor(gemstoneMixtureSellOfferPrice - totalCost);
     document.getElementById("GemstoneMixtureCostToCraft").innerHTML = `Current total material cost to buy order: ${totalCost} coins.`;
     document.getElementById("GemstoneMixtureValue").innerHTML = `Current Gemstone Mixture sell offer price: ${gemstoneMixtureSellOfferPrice} coins.`;
-    document.getElementById("GemstoneMixtureProfit").innerHTML = `Current profit: ${gemstoneMixtureProfit} coins.`;
+    document.getElementById("GemstoneMixtureProfit").innerHTML = `Current fine jade gemstone price: ${fineJadeBuyOrderPrice}`;//`Current profit: ${gemstoneMixtureProfit} coins.`;
 }
 
 
 
   function callOnLoad() {
     loadJSON("https://api.hypixel.net/skyblock/bazaar", onLoadPrices);
+    const buyOrderPara = document.querySelector('#emptyDiv1');
+    buyOrderPara.innerHTML = "Hejsa med digsa";
+    document.querySelector('#emptyDiv1').append(buyOrderPara);
   }
 
 function gemstoneCalc() {
     var amountInput = document.getElementById("GemstoneMixtureAmount").value;
     console.log(amountInput);
-    gemstoneMixtureCalc(amountInput);
+    //gemstoneMixtureCalc(amountInput);
     loadJSON("https://api.hypixel.net/skyblock/bazaar", gemstoneMixtureCalc, amountInput);
 }
 

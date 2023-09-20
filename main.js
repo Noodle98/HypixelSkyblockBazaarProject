@@ -22,11 +22,11 @@ function loadJSON(path, success, successArgs, successArgsRaw) {
 function mainData(Data, itemName, rawUserInput)
 {
     let buyOrderPrice = Data['products'][itemName]['sell_summary'][0]['pricePerUnit'];
-    let sellOrderPrice = Data['products'][itemName]['buy_summary'][0]['pricePerUnit'];
+    let sellOfferPrice = Data['products'][itemName]['buy_summary'][0]['pricePerUnit'];
 
     document.getElementById('buy_order_price').innerHTML = 'Current buy order (instant sell) price for ' + rawUserInput + ' is: ' + buyOrderPrice + ' coins.';
-    document.getElementById('sell_offer_price').innerHTML = 'Current sell offer (instant buy) price for ' + rawUserInput + ' is: ' + sellOrderPrice + ' coins.';
-}
+    document.getElementById('sell_offer_price').innerHTML = 'Current sell offer (instant buy) price for ' + rawUserInput + ' is: ' + sellOfferPrice + ' coins.';
+  }
 // speak() function which is called by the HTML code,
 // And parses user input, and then passes it along to
 // loadJSON function, in order to be used in mainData function,
