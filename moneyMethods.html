@@ -24,50 +24,98 @@
    a:hover {color: #0cfce8;}  
    a:active {color: #50fc0c;}  
 
-   #switchLighting {
-      float: right;
-    }
-  
+   .topnav {
+    display: flex;
+    justify-content: space-between;
+   }
+
+   #pages {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+   }
+   .materialsToBuyOrder {
+    font-weight: bold;
+   }
+   .moneyMethods {
+    display: flex;
+    justify-content: space-between;
+   }
+
+   #header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+   }
+
+   .moneyMethods .textArea {
+    position: sticky;
+    top: 0;
+    flex-grow: 1;
+    
+   }
+
 </style>
 </head>
 <body>
 <div class="topnav">
-  <a href="index.html">Bazaar Price Checker</a>
-  <a class="active" href="./moneyMethods.html">Money Making Methods</a>
-  <button type="button" id="switchLighting">Switch Lighting</button>
+  <div id="pages">
+    <a href="index.html">Bazaar Price Checker</a>
+    <a class="active" href="./moneyMethods.html">Money Making Methods</a>
+  </div>
+    <button type="button" id="switchLighting">Switch Lighting</button>
   <!--a href="#contact">Contact</a>
   <a href="#about">About</a-->
 </div>
 
-<h1>Money making methods using bazaar items</h1>
-<div id="gemstoneMixtureDiv">
-  <h2 class="methodName">Forge: Gemstone Mixture</h2>
-  <h3>Prerequisites:</h4>
-  <ul class="ul-prerequisites">
-    <li>Dwarven Mines unlocked</li>
-    <li>Heart of the Mountain Tier 4</li>
-  </ul>
-  <h3 class="effortLevel">Effort level: Low</h3>
-  <p class="itemInformation">
-  Gemstone Mixture is a Forge item, forged at Forge Basin in the Dwarven Mines.<br>
-  I highly recommend getting the travel scroll to the forge, called:<br>
-  "Travel Scroll to the Dwarven Forge", to make forging these more seemless.<br>
-  You can then just type "/warpforge" (without quotations) in chat.<br><br></p>
+<h1 id="header">Money making methods using bazaar items</h1>
 
-  <p id="gemMixToMakeX">To make 1x Gemstone Mixture, you need to buy order the following materials at the bazaar:</p>
-  <ul class="materialsToBuyOrder">
-    <li id="gemMixJade">4x Fine Jade Gemstone</li>
-    <li id="gemMixAmber">4x Fine Amber Gemstone</li>
-    <li id="gemMixSapphire">4x Fine Sapphire Gemstone</li>
-    <li id="gemMixAmethyst">4x Fine Amethyst Gemstone</li>
-    <li id="gemMixSludgeJuice">320x Sludge Juice</li>
-  </ul>
-  <p class="costValueProfit" id="GemstoneMixtureCostToCraft"></p>
-  <p class="costValueProfit" id="GemstoneMixtureValue"></p>
-  <p class="costValueProfit" id="GemstoneMixtureProfit"></p>
-  <p class="methodInputPromt"> Input the amount of Gemstone Mixtures you want to craft in the input field below, and click "Calculate".</p>
-  <input type="number" id="GemstoneMixtureAmount">
-  <button type="button" id="GemstoneMixtureButton">Calculate</button>
+<div class="wholePage">
+  <div class="moneyMethods">
+    <div class="textArea">
+      <h2 class="methodName">Forge: Gemstone Mixture</h2>
+      <h3>Requirements:</h4>
+      <ul class="ul-requirements">
+        <li>Dwarven Mines unlocked</li>
+        <li>Heart of the Mountain Tier 4</li>
+      </ul>
+      <h3 class="effortLevel">Effort level: Low</h3>
+      <p class="itemInformation">
+      Gemstone Mixture is a Forge item, forged at Forge Basin in the Dwarven Mines.<br>
+      I highly recommend getting the travel scroll to the forge, called:<br>
+      "Travel Scroll to the Dwarven Forge", to make forging these more seemless.<br>
+      You can then just type "/warpforge" (without quotations) in chat.<br><br></p>
+
+      <p id="gemMixToMakeX">To make 1x Gemstone Mixture, you need to buy order the following materials at the bazaar:</p>
+      <ul class="materialsToBuyOrder">
+        <li id="gemMixJade">4x Fine Jade Gemstone</li>
+        <li id="gemMixAmber">4x Fine Amber Gemstone</li>
+        <li id="gemMixSapphire">4x Fine Sapphire Gemstone</li>
+        <li id="gemMixAmethyst">4x Fine Amethyst Gemstone</li>
+        <li id="gemMixSludgeJuice">320x Sludge Juice</li>
+      </ul>
+      <p class="costValueProfit" id="GemstoneMixtureCostToCraft"></p>
+      <p class="costValueProfit" id="GemstoneMixtureValue"></p>
+      <p class="costValueProfit" id="GemstoneMixtureProfit"></p>
+      <p class="methodInputPromt"> Input the amount of Gemstone Mixtures you want to craft in the input field below, and click "Calculate".</p>
+      <input type="number" id="GemstoneMixtureAmount">
+      <button type="button" id="GemstoneMixtureButton">Calculate</button>
+    </div>
+    <div class="imageGuiding">
+      <p class="startText">First go to the bazaar in the hub, or do "/bz" in chat without quotations if you have booster cookie buff</h2>
+      <p class="startText">Once you're at the bazaar, start by finding the item you want to buy.</p>
+      <p class="pictureGuiding">Then click the "Create Buy Order" button, shown in the red box in the picture below.</p>
+      <img src="/imgs/gemstoneMixture/guideCreateBuyOrderButton.png" alt="Picture showing the 'Create Buy Order' button in the bazaar">
+      <p class="pictureGuiding">Then click the "Custom Amount" button, shown in the red box in the picture below, and type in your amount.</p>
+      <img src="/imgs/gemstoneMixture/guideBuyOrderAmountButton.png" alt="Picture showing the 'Custom Amount' button in the bazaar.">
+      <p class="pictureGuiding">Now select the "Top Order +0.1" price option, shown in the red box in the picture below.</p>
+      <img src="/imgs/gemstoneMixture/guidePriceOvercutButton.png" alt="Picture showing the 'Top Order +0.1' price button in the bazaar">
+      <p class="pictureGuiding">Lastly, just choose the "Buy Order" button, to finish the buy order.</p>
+      <img src="/imgs/gemstoneMixture/guideConfirmOrderButton.png" alt="Picture showing the 'Buy Order' confirm button in the bazaar.">
+      <p class="pictureGuiding">You can view, claim, and cancel all your orders in the bazaar, shown in the red box in the picture below.</p>
+      <img src="/imgs/Bazaar/manageOrdersButton.png" alt="Picture showing the 'Manage Orders' button in the bazaar.">
+    </div>
+  </div>
 </div>
 </body>
 </html>
