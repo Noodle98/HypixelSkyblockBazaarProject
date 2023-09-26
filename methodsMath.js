@@ -1,5 +1,5 @@
 import itemNames from './bazaarItems.js';
-export default function gemstoneMixtureCalc(data, amount) {
+function gemstoneMixtureCalc(data, amount) {
     //console.log("This is gemstoneMixtureCalc");
     console.log(itemNames['gemstone mixture']);
     const fineJadeBuyOrderPrice = data['products']["FINE_JADE_GEM"]['sell_summary'][0]['pricePerUnit'];
@@ -14,7 +14,7 @@ export default function gemstoneMixtureCalc(data, amount) {
 
     const gemstoneMixtureProfit = Math.floor(gemstoneMixtureSellOfferPrice - totalCost);
     // Changing the amount of gemstones to be the same as amount.
-    document.querySelector("#gemMixToMakeX").innerHTML = `To make ${amount}x Gemstone Mixture, you need to buy order the following materails at the bazaar:`;
+    document.querySelector("#gemMixToMakeX").innerHTML = `To make ${amount}x Gemstone Mixture, you need to buy order the following materials at the bazaar:`;
     // Changing the 5 material amounts to buy order to be multiplied by amount
     document.querySelector("#gemMixJade").innerHTML = `${amount * 4}x Fine Jade Gemstone`;
     document.querySelector("#gemMixAmber").innerHTML = `${amount * 4}x Fine Amber Gemstone`;
@@ -26,3 +26,27 @@ export default function gemstoneMixtureCalc(data, amount) {
     document.getElementById("GemstoneMixtureValue").innerHTML = `Current total sell offer price for ${amount} Gemstone Mixtures: ${gemstoneMixtureSellOfferPrice.toLocaleString("en-US")} coins.`;
     document.getElementById("GemstoneMixtureProfit").innerHTML = `Current profit: ${gemstoneMixtureProfit.toLocaleString("en-US")} coins.`;
 }
+
+function enchLavaBucketCalc(data, amount) {
+    console.log(amount);
+    // Getting the prices for enchanted coal block, and iron ingot
+    const enchCoalBlockBuyOrderPrice = data['products']["ENCHANTED_COAL_BLOCK"]['sell_summary'][0]['pricePerUnit'];
+    const ironIngotBuyOrderPrice = data['products']["IRON_INGOT"]['sell_summary'][0]['pricePerUnit'];
+    // Changing the amount of enchanted lava buckets to be the same amount as input value.
+    document.querySelector("#EnchLavaBucketToMakeX").innerHTML = `To make ${amount}x Enchanted Lava Bucket, you need to buy order the following materials at the bazaar:`;
+    // Changing the 2 material amounts to buy order to be multiplied by amount
+    document.querySelector("#EnchCoalBlockForEnchLavaBucket").innerHTML = `${amount * 2}x Enchanted Coal Block`;
+    document.querySelector("#IronIngotsForEnchLavaBucket").innerHTML = `${amount * 480}x Iron Ingot`;
+
+    const enchLavaBucketTotalCost = Math.floor(((2 * enchCoalBlockBuyOrderPrice) + (480 * ironIngotBuyOrderPrice)) * amount);
+    // Changes price for the sell offer price of Enchanted Lava Bucket multiplied by amount
+    const enchLavaBucketSellOfferPrice = Math.floor((data['products']["ENCHANTED_LAVA_BUCKET"]['buy_summary'][0]['pricePerUnit']) * amount);
+    // Changes price for profit from crafting and selling Enchanted Lava Bucket multplied by amount
+    const enchLavaBucketProfit = Math.floor(enchLavaBucketSellOfferPrice - enchLavaBucketTotalCost);
+    // changes elements to prices with localeString, for cost, value, and profit for 1 Enchanted Lava Bucket
+    document.querySelector("#EnchLavaBucketCostToCraft").innerHTML = `Current total material cost to buy order: ${enchLavaBucketTotalCost.toLocaleString("en-US")} coins.`;
+    document.querySelector("#EnchLavaBucketValue").innerHTML = `Current sell offer price for ${amount} Enchanted Lava Bucket: ${enchLavaBucketSellOfferPrice.toLocaleString("en-US")} coins.`;
+    document.querySelector("#EnchLavaBucketProfit").innerHTML = `Current profit: ${enchLavaBucketProfit.toLocaleString("en-US")} coins.`;
+}
+
+export {gemstoneMixtureCalc, enchLavaBucketCalc};

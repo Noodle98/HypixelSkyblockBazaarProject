@@ -38,8 +38,10 @@
     font-weight: bold;
    }
    .moneyMethods {
+    align-items: flex-start;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 50px;
    }
 
    #header {
@@ -48,7 +50,7 @@
     font-size: 40px;
    }
 
-   .moneyMethods .textArea {
+   .textArea {
     position: sticky;
     top: 0;
     flex-grow: 1;
@@ -76,12 +78,16 @@
       <h2 class="methodName">Forge: Gemstone Mixture</h2>
       <h3>Requirements:</h4>
       <ul class="ul-requirements">
+        <li>Skyblock level 7 (for bazaar access)</li>
         <li>Dwarven Mines unlocked</li>
         <li>Heart of the Mountain Tier 4</li>
       </ul>
       <h3 class="effortLevel">Effort level: Low</h3>
       <p class="itemInformation">
       Gemstone Mixture is a Forge item, forged at Forge Basin in the Dwarven Mines.<br>
+      You start with 4 forging slots, but this can be increased to 5 at /hotm tier 5<br>
+      By default, Gemstone Mixtures take 4 hours to forge, however his can be decreased by<br>
+      upgrading the "Quick Forge" perk in /hotm (unlocked at hotm tier 2).<br>
       I highly recommend getting the travel scroll to the forge, called:<br>
       "Travel Scroll to the Dwarven Forge", to make forging these more seemless.<br>
       You can then just type "/warpforge" (without quotations) in chat.<br><br></p>
@@ -97,7 +103,8 @@
       <p class="costValueProfit" id="GemstoneMixtureCostToCraft"></p>
       <p class="costValueProfit" id="GemstoneMixtureValue"></p>
       <p class="costValueProfit" id="GemstoneMixtureProfit"></p>
-      <p class="methodInputPromt"> Input the amount of Gemstone Mixtures you want to craft in the input field below, and click "Calculate".</p>
+      <p class="methodInputPromt"> Input the amount of Gemstone Mixtures you want to craft<br>
+        In the input field below, and click "Calculate".</p>
       <input type="number" id="GemstoneMixtureAmount">
       <button type="button" id="GemstoneMixtureButton">Calculate</button>
     </div>
@@ -114,6 +121,42 @@
       <img src="/imgs/gemstoneMixture/guideConfirmOrderButton.png" alt="Picture showing the 'Buy Order' confirm button in the bazaar.">
       <p class="pictureGuiding">You can view, claim, and cancel all your orders in the bazaar, shown in the red box in the picture below.</p>
       <img src="/imgs/Bazaar/manageOrdersButton.png" alt="Picture showing the 'Manage Orders' button in the bazaar.">
+    </div>
+  </div>
+  <div class="moneyMethods">
+    <div class="textArea">
+      <h2 class="methodName">Enchanted Lava Bucket</h2>
+      <ul class="ul-requirements">
+        <li>Skyblock level 7 (for bazaar access)</li>
+        <li>Coal collection level VIII (8)</li>
+        <li>Iron collection level IV (4)</li>
+      </ul>
+      <h3 class="effortLevel">Effort level: Low</h3>
+      <p class="itemInformation">
+        Enchanted Lava Bucket is a minion fuel that gives +25% minion speed.<br>
+        It is unlocked from Coal collection lvl VIII (8), which can be achieved easily,<br>
+        By placing coal minions on your island. Alternatively, you can mine it manually in the Gold Mine.<br>
+        The reason we additonally want Iron collection level IV (4), is to make even more profit,<br>
+        By buy ordering regular iron ingots and turning them into the 3 enchanted, needed for the bucket.<br>
+        I highly recommend getting a personal compactor 4000 or higher, to turn the iron into enchanted iron automatically.<br><br>
+        Although you might have noticed that the profit per Enchanted Lava Bucket is low, don't skip this method just yet.<br>
+        The real money potential from this method comes from the fact that with just 1 buy order for each material type,<br>
+        You can make many buckets at once. Also the buy orders usually fill very fast,<br>
+        Making this method very easy, and very effecient.<br>
+        If you invest more money into materials, you can make a lot more money in about the same amount of time.<br>
+      </p>
+      <p id="EnchLavaBucketToMakeX">To make 1x Enchanted Lava Bucket, you need to buy order the following materials:</p>
+      <ul class="materialsToBuyOrder">
+        <li id="EnchCoalBlockForEnchLavaBucket">2x Enchanted Coal Block</li>
+        <li id="IronIngotsForEnchLavaBucket">480x Iron Ingot</li>
+      </ul>
+      <p class="costValueProfit" id="EnchLavaBucketCostToCraft"></p>
+      <p class="costValueProfit" id="EnchLavaBucketValue"></p>
+      <p class="costValueProfit" id="EnchLavaBucketProfit"></p>
+      <p class="methodInputPromt"> Input the amount of Enchanted Lava Buckets you want to craft,<br>
+        In the input field below, and click "Calculate".</p>
+      <input type="number" id="EnchLavaBucketAmount">
+      <button type="button" id="EnchLavaBucketButton">Calculate</button>
     </div>
   </div>
 </div>
