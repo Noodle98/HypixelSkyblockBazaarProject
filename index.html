@@ -10,7 +10,7 @@
 <title>Bazaar Price Checker</title>
 <style>
   body {
-    padding:0% 3% 10% 3%;
+    margin: 0px;
     background-color: white;
     color: black;
     }
@@ -18,26 +18,62 @@
     color: lightgray;
     background-color: #2E4053;
     }
+
+    .topnav {
+    background: #54769b;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    flex-grow: 1;
+    width: 100%;
+    z-index: 1;
+    height: 5%;
+   }
     
     a:link {color: white;}  
-    a:visited {color: lightblue;}  
-    a:hover {color: #0cfce8;}  
+    a:visited {color: lightblue;} 
+    a:hover {color: #0cfce8;} 
     a:active {color: #50fc0c;}  
 
     #switchLighting {
       float: right;
     }
+
+    .imageGuiding {
+    padding-right: 2%;
+   }
+
+   .topnav #pages {
+    padding: 8px;
+   }
+
+   #pages {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+   }
+   
+   .topnav a {
+    text-decoration: none;
+   }
+
+   .topnav a:hover {
+    text-decoration: underline;
+   }
   
 </style>
 </head>
 <body>
-<div class="topnav">
-  <a class="active" id="switchToSelf" href="./index.html">Bazaar Price Checker</a>
-  <a id="switchToMoneyMethods" href="./moneyMethods.html">Money Making Methods</a>
-  <button type="button" id="switchLighting">Switch Lighting</button>
-  <!--a href="#contact">Contact</a>
-  <a href="#about">About</a-->
-</div>
+  <div class="topnav">
+    <div id="pages">
+      <a href="index.html">Bazaar Price Checker</a>
+      <a class="active" href="./moneyMethods.html">Money Making Methods</a>
+    </div>
+      <button type="button" id="switchLighting">Switch Lighting</button>
+    <!--a href="#contact">Contact</a>
+    <a href="#about">About</a-->
+  </div>
 <h1>Welcome to Noodle's Hypixel Skyblock Bazaar profit calculator</h1>
 <p>Please enter an item name and click the Search button.</p>
 <input type="text" id="item_input">

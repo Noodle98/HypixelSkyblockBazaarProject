@@ -10,7 +10,7 @@
 <title>Money Making Methods</title>
 <style>
   body {
-    
+    margin: 0px;
     background-color: white;
     color: black;
     }
@@ -25,13 +25,18 @@
    a:active {color: #50fc0c;}  
 
    .topnav {
-    background: rgb(32, 32, 32);
+    background: #54769b;
     display: flex;
     justify-content: space-between;
     position: sticky;
     top: 0;
     flex-grow: 1;
     width: 100%;
+    z-index: 1;
+    height: 5%;
+   }
+   .topnav #pages {
+    padding: 8px;
    }
    .topnav a {
     text-decoration: none;
@@ -59,11 +64,18 @@
    #header {
     text-align: center;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 50px;
+   }
+
+   .methodName {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
    }
 
    .textArea {
     padding-left: 2%;
+    padding-top: 2%;
     position: sticky;
     top: 0;
     flex-grow: 1;
@@ -83,7 +95,9 @@
       <a href="index.html">Bazaar Price Checker</a>
       <a class="active" href="./moneyMethods.html">Money Making Methods</a>
     </div>
+    <div id="topSelectors">
       <button type="button" id="switchLighting">Switch Lighting</button>
+    </div>
     <!--a href="#contact">Contact</a>
     <a href="#about">About</a-->
   </div>
