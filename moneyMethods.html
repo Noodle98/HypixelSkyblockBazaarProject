@@ -10,7 +10,7 @@
 <title>Money Making Methods</title>
 <style>
   body {
-    padding:0% 3% 10% 3%;
+    
     background-color: white;
     color: black;
     }
@@ -25,8 +25,20 @@
    a:active {color: #50fc0c;}  
 
    .topnav {
+    background: rgb(32, 32, 32);
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    flex-grow: 1;
+    width: 100%;
+   }
+   .topnav a {
+    text-decoration: none;
+   }
+
+   .topnav a:hover {
+    text-decoration: underline;
    }
 
    #pages {
@@ -41,7 +53,7 @@
     align-items: flex-start;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 50px;
+    padding-bottom: 75px;
    }
 
    #header {
@@ -51,28 +63,31 @@
    }
 
    .textArea {
+    padding-left: 2%;
     position: sticky;
     top: 0;
     flex-grow: 1;
     
    }
 
+   .imageGuiding {
+    padding-right: 2%;
+   }
+
 </style>
 </head>
 <body>
-<div class="topnav">
-  <div id="pages">
-    <a href="index.html">Bazaar Price Checker</a>
-    <a class="active" href="./moneyMethods.html">Money Making Methods</a>
-  </div>
-    <button type="button" id="switchLighting">Switch Lighting</button>
-  <!--a href="#contact">Contact</a>
-  <a href="#about">About</a-->
-</div>
-
-<h1 id="header">Money making methods using bazaar items</h1>
-
 <div class="wholePage">
+  <div class="topnav">
+    <div id="pages">
+      <a href="index.html">Bazaar Price Checker</a>
+      <a class="active" href="./moneyMethods.html">Money Making Methods</a>
+    </div>
+      <button type="button" id="switchLighting">Switch Lighting</button>
+    <!--a href="#contact">Contact</a>
+    <a href="#about">About</a-->
+  </div>
+  <h1 id="header">Money making methods using bazaar items</h1>
   <div class="moneyMethods">
     <div class="textArea">
       <h2 class="methodName">Forge: Gemstone Mixture</h2>
