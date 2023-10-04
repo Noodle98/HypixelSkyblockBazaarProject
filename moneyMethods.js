@@ -1,6 +1,28 @@
 import itemNames from './bazaarItems.js';
-import { gemstoneMixtureCalc, enchLavaBucketCalc }from './methodsMath.js';
+import { gemstoneMixtureCalc, enchLavaBucketCalc } from './methodsMath.js';
 const bazaarItemNames = itemNames;
+
+// function that calls the hypixel API every 10 sec and refreshes the data into local storage
+function addToLocalStorage() {
+  localStorage.clear();
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', "https://api.hypixel.net/skyblock/bazaar", true);
+  xhr.send();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      localStorage.setItem("hypixelSkyblockBazaarData", JSON.stringify(xhr.responseText));
+      console.log("Data was added to Local storage without errors");
+    }
+    else {
+      console.log("Error: Could not load hypixel API data into localStorage");
+    }
+  }
+}
+
+setInterval(addToLocalStorage, 30000);
+
+
 // loadJSON method to open the JSON file.
 function loadJSON(path, success, amountArg = null) {
     var xhr = new XMLHttpRequest();
@@ -17,7 +39,7 @@ function loadJSON(path, success, amountArg = null) {
         }
       }
       else {
-        document.getElementById('GemstoneMixtureCostToCraft').innerHTML = 'Error: Data not Found';
+        console.log('Error: Failed to retrieve data from localStorage');
       }
     }
 }
@@ -66,16 +88,34 @@ function onLoadPrices(data) {
 
 // Function for gemstone calculate button
 function gemstoneCalc() {
-    var amountInput = document.getElementById("GemstoneMixtureAmount").value;
-    //console.log(amountInput);
-    //gemstoneMixtureCalc(amountInput);
-    loadJSON("https://api.hypixel.net/skyblock/bazaar", gemstoneMixtureCalc, amountInput);
+    // Gets the hypixel API data from localStorage
+    var data = JSON.parse(JSON.parse(localStorage.getItem('hypixelSkyblockBazaarData')));
+
+    // Gets the number input in the text field
+    var amountInput = document.querySelector("#GemstoneMixtureAmount").value;
+
+    // Gets the Bazaar Flipper upgrade level selected in the dropdown menu in topnav
+    const bazaarFlipperLevel = parseFloat(document.querySelector("#topSelect").value);
+    console.log(bazaarFlipperLevel);
+
+    // Calls GemstoneMixtureCalc function from methodsMath.js with the 3 parameters
+    gemstoneMixtureCalc(data, amountInput, bazaarFlipperLevel);
 }
 
 // Function for enchanted lava bucket calculate button
 function enchbucketcalc() {
+  // Gets the hypixel API data from localStorage
+  var data = JSON.parse(JSON.parse(localStorage.getItem('hypixelSkyblockBazaarData')));
+
+  // Gets the number input in the text field
   var amountInput = document.querySelector("#EnchLavaBucketAmount").value;
-  loadJSON("https://api.hypixel.net/skyblock/bazaar", enchLavaBucketCalc, amountInput);
+
+  // Gets the Bazaar Flipper upgrade level selected in the dropdown menu in topnav
+  const bazaarFlipperLevel = parseFloat(document.querySelector("#topSelect").value);
+
+  // Calls enchLavaBucketCalc function from methodsMath.js with the 3 parameters
+  enchLavaBucketCalc(data, amountInput, bazaarFlipperLevel);
+  console.log(bazaarFlipperLevel);
 }
 
 function switchLighting(){

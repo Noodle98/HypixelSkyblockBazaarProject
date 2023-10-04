@@ -1,6 +1,28 @@
 import itemNames from './bazaarItems.js';
 import parseUserInput from './parseUserInput.js';
 const bazaarItemNames = itemNames;
+
+// function that calls the hypixel API every 5 sec and refreshes the data into local storage
+function addToLocalStorage() {
+  localStorage.clear();
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', "https://api.hypixel.net/skyblock/bazaar", true);
+  xhr.send();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      localStorage.setItem("hypixelSkyblockBazaarData", JSON.stringify(xhr.responseText));
+      console.log("Data was added to Local storage without errors");
+    }
+    else {
+      console.log("Error: Could not load hypixel API data into localStorage");
+    }
+  }
+}
+
+setInterval(addToLocalStorage, 10000);
+
+
 // loadJSON method to open the JSON file.
 function loadJSON(path, success, successArgs, successArgsRaw) {
     var xhr = new XMLHttpRequest();

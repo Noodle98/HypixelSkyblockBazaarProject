@@ -1,7 +1,7 @@
 import itemNames from './bazaarItems.js';
-function gemstoneMixtureCalc(data, amount) {
-    //console.log("This is gemstoneMixtureCalc");
-    console.log(itemNames['gemstone mixture']);
+function gemstoneMixtureCalc(data, amount, bazaarFlipperLevel) {
+    //console.log(data);
+    //console.log(itemNames['gemstone mixture']['sell_summary'][0]['pricePerUnit']);
     const fineJadeBuyOrderPrice = data['products']["FINE_JADE_GEM"]['sell_summary'][0]['pricePerUnit'];
     const fineAmberBuyOrderPrice = data['products']["FINE_AMBER_GEM"]['sell_summary'][0]['pricePerUnit'];
     const fineSapphireBuyOrderPrice = data['products']["FINE_SAPPHIRE_GEM"]['sell_summary'][0]['pricePerUnit'];
@@ -10,7 +10,7 @@ function gemstoneMixtureCalc(data, amount) {
 
     const totalCost = Math.floor(((4 * fineJadeBuyOrderPrice) + (4 * fineAmberBuyOrderPrice) + (4 * fineSapphireBuyOrderPrice) + (4 * fineAmethystBuyOrderPrice) + (320 * sludgeJuiceBuyOrderPrice)) * amount)
     
-    const gemstoneMixtureSellOfferPrice = Math.floor((data['products']["GEMSTONE_MIXTURE"]['buy_summary'][0]['pricePerUnit']) * amount);
+    const gemstoneMixtureSellOfferPrice = Math.floor((data['products']["GEMSTONE_MIXTURE"]['buy_summary'][0]['pricePerUnit']) * amount * bazaarFlipperLevel);
 
     const gemstoneMixtureProfit = Math.floor(gemstoneMixtureSellOfferPrice - totalCost);
     // Changing the amount of gemstones to be the same as amount.
@@ -23,8 +23,8 @@ function gemstoneMixtureCalc(data, amount) {
     document.querySelector("#gemMixSludgeJuice").innerHTML = `${amount * 320}x Sludge Juice`;
     // Chaning the cost, sell offer price, and profit to be multiplied by amount
     document.getElementById("GemstoneMixtureCostToCraft").innerHTML = `Current total material cost to buy order: ${totalCost.toLocaleString("en-US")} coins.`;
-    document.getElementById("GemstoneMixtureValue").innerHTML = `Current total sell offer price for ${amount} Gemstone Mixtures: ${gemstoneMixtureSellOfferPrice.toLocaleString("en-US")} coins.`;
-    document.getElementById("GemstoneMixtureProfit").innerHTML = `Current profit: ${gemstoneMixtureProfit.toLocaleString("en-US")} coins.`;
+    document.getElementById("GemstoneMixtureValue").innerHTML = `Current total sell offer price for ${amount} Gemstone Mixtures: ${gemstoneMixtureSellOfferPrice.toLocaleString("en-US")} coins after bazaar fee.`;
+    document.getElementById("GemstoneMixtureProfit").innerHTML = `Current profit: ${gemstoneMixtureProfit.toLocaleString("en-US")} coins after bazaar fee.`;
 }
 
 function enchLavaBucketCalc(data, amount) {
