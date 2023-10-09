@@ -27,15 +27,17 @@ function gemstoneMixtureCalc(data, amount, bazaarFlipperLevel) {
     document.getElementById("GemstoneMixtureProfit").innerHTML = `Current profit: ${gemstoneMixtureProfit.toLocaleString("en-US")} coins after bazaar fee.`;
 }
 
-function enchLavaBucketCalc(data, amount) {
-    console.log(amount);
+function enchLavaBucketCalc(data, amount, bazaarFlipperLevel) {
     // Getting the prices for enchanted coal block, and iron ingot
     const enchCoalBlockBuyOrderPrice = data['products']["ENCHANTED_COAL_BLOCK"]['sell_summary'][0]['pricePerUnit'];
     const ironIngotBuyOrderPrice = data['products']["IRON_INGOT"]['sell_summary'][0]['pricePerUnit'];
+    
     // Changing the amount of enchanted lava buckets to be the same amount as input value.
     document.querySelector("#EnchLavaBucketToMakeX").innerHTML = `To make ${amount}x Enchanted Lava Bucket, you need to buy order the following materials at the bazaar:`;
+
     // Changing the 2 material amounts to buy order to be multiplied by amount
     document.querySelector("#EnchCoalBlockForEnchLavaBucket").innerHTML = `${amount * 2}x Enchanted Coal Block`;
+    
     document.querySelector("#IronIngotsForEnchLavaBucket").innerHTML = `${amount * 480}x Iron Ingot`;
 
     const enchLavaBucketTotalCost = Math.floor(((2 * enchCoalBlockBuyOrderPrice) + (480 * ironIngotBuyOrderPrice)) * amount);

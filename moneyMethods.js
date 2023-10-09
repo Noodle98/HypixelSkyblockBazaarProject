@@ -1,5 +1,6 @@
 import itemNames from './bazaarItems.js';
 import { gemstoneMixtureCalc, enchLavaBucketCalc } from './methodsMath.js';
+import testingAuctions from './activeAuctions.js';
 const bazaarItemNames = itemNames;
 
 // function that calls the hypixel API every 10 sec and refreshes the data into local storage
@@ -14,7 +15,7 @@ function addToLocalStorage() {
       localStorage.setItem("hypixelSkyblockBazaarData", JSON.stringify(xhr.responseText));
       console.log("Data was added to Local storage without errors");
     }
-    else {
+    else if (xhr.readyState != 4 || xhr.status != 200) {
       console.log("Error: Could not load hypixel API data into localStorage");
     }
   }
@@ -84,6 +85,7 @@ function onLoadPrices(data) {
     // Loads dark mode by default
     var element = document.body;
     element.classList.toggle("dark-mode");
+    testingAuctions();
   }
 
 // Function for gemstone calculate button
@@ -131,4 +133,4 @@ document.querySelector("#EnchLavaBucketButton").addEventListener('click', enchbu
 document.querySelector("#switchLighting").addEventListener('click', switchLighting);
 
 
-// MIND KLEMENT OM FLEX BOX OG GRID TIL CSS
+

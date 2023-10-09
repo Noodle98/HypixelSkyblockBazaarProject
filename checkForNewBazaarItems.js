@@ -33,7 +33,11 @@ function parsingAllData(hypixelData) {
             //console.log(key);
         }
     }
+    const whatIsThisItem = hypixelData['products']["AMALGAMATED_CRIMSONITE"]['sell_summary'][0]['pricePerUnit'];
     console.log(missingValues);
+    document.querySelector("#new_items_array").innerHTML = missingValues;
+    document.querySelector("#whatIsThisItem").innerHTML = whatIsThisItem;
+    
 
 }
 
