@@ -1,0 +1,82 @@
+body {
+    margin: 0px;
+    background-color: white;
+    color: black;
+    }
+    .dark-mode {
+    color: lightgray;
+    background-color: #2E4053;
+    }
+    
+   a:link {color: white;}  
+   a:visited {color: lightblue;}  
+   a:hover {color: #0cfce8;}  
+   a:active {color: #50fc0c;}  
+
+   .topnav {
+    background: #54769b;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    flex-grow: 1;
+    width: 100%;
+    z-index: 1;
+    height: 5%;
+   }
+   .topnav #pages {
+    padding: 8px;
+   }
+   .topnav a {
+    text-decoration: none;
+   }
+
+   .topnav a:hover {
+    text-decoration: underline;
+   }
+
+   #pages {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+   }
+
+   #topSelectors {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+   }
+   .materialsToBuyOrder {
+    font-weight: bold;
+   }
+   .moneyMethods {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 75px;
+   }
+
+   #header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+   }
+
+   .methodName {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+   }
+
+   .textArea {
+    padding-left: 2%;
+    padding-top: 2%;
+    position: sticky;
+    top: 0;
+    flex-grow: 1;
+    
+   }
+
+   .imageGuiding {
+    padding-right: 2%;
+   }

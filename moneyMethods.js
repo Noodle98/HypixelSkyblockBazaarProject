@@ -85,7 +85,7 @@ function onLoadPrices(data) {
     // Loads dark mode by default
     var element = document.body;
     element.classList.toggle("dark-mode");
-    testingAuctions();
+    //testingAuctions();
   }
 
 // Function for gemstone calculate button
