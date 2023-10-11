@@ -1,22 +1,28 @@
 import itemNames from './bazaarItems.js';
 import { gemstoneMixtureCalc, enchLavaBucketCalc } from './methodsMath.js';
-import testingAuctions from './activeAuctions.js';
+//import testingAuctions from './activeAuctions.js';
 const bazaarItemNames = itemNames;
 
 // function that calls the hypixel API every 10 sec and refreshes the data into local storage
 function addToLocalStorage() {
-  localStorage.clear();
+  //localStorage.clear();
   var xhr = new XMLHttpRequest();
   xhr.open('GET', "https://api.hypixel.net/skyblock/bazaar", true);
   xhr.send();
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      localStorage.setItem("hypixelSkyblockBazaarData", JSON.stringify(xhr.responseText));
-      console.log("Data was added to Local storage without errors");
+      if (localStorage.getItem("hypixelSkyblockBazaarData") == null) {
+        localStorage.setItem("hypixelSkyblockBazaarData", JSON.stringify(xhr.responseText));
+      }
+      else {
+        localStorage.removeItem("hypixelSkyblockBazaarData");
+        localStorage.setItem("hypixelSkyblockBazaarData", JSON.stringify(xhr.responseText));
+      }
+      //console.log("Data was added to Local storage without errors");
     }
     else if (xhr.readyState != 4 || xhr.status != 200) {
-      console.log("Error: Could not load hypixel API data into localStorage");
+      //console.log("Error: Could not load hypixel API data into localStorage");
     }
   }
 }
