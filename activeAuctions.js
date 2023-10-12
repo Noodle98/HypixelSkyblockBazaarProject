@@ -10,7 +10,7 @@ function fetchPage(pageNumber, callback) {
         var response = JSON.parse(nextXhr.responseText);
         // Calls the callback function with the response as argument
         callback(null, response);
-        console.log(`Hypixel API with page number ${pageNumber} has been called and sent to workData`);
+        //console.log(`Hypixel API with page number ${pageNumber} has been called and sent to workData`);
     }   
     else {
         callback('Error fetching data. Status code: ' + nextXhr.status, null, pageNumber)
@@ -20,22 +20,35 @@ function fetchPage(pageNumber, callback) {
 }
 function workData(error, data, pageNumber) {
     if (error) {
-        console.log(`Error, call with page number ${pageNumber} did not pass along any data`);
+        console.log(error);
     }
     else {
-    let greaterBackpacks = [];
+    //let greaterBackpacks = [];
     const auctions = data['auctions'];
     for (let x of auctions) {
         if (x['item_name'] == "Greater Backpack" && x['bin'] == true) {
-            greaterBackpacks.push(x['starting_bid']);
-            console.log(`Backpack found, price is: ${x['starting_bid']}`)
+            //greaterBackpacks.push(x['starting_bid']);
+            if (localStorage.getItem("lbinGreaterBackpack") == null) {
+                localStorage.setItem("lbinGreaterBackpack", x['starting_bid']);
+            }
+            else {
+                if (x['starting_bid'] < parseInt(localStorage.getItem("lbinGreaterBackpack"))) {
+                    localStorage.removeItem("lbinGreaterBackpack");
+                    localStorage.setItem("lbinGreaterBackpack", x['starting_bid']);
+                    console.log(`this backpack is the new lbin detected: ${x['starting_bid']}`);
+                }
+            }
+            //console.log(`Backpack found, price is: ${x['starting_bid']}`);
             }
         }
     }
-                
+
     }
 
 function testingAuctions() {
+    if (localStorage.getItem("lbinGreaterBackpack") != null) {
+        localStorage.removeItem("lbinGreaterBackpack");
+    }
     var xhr = new XMLHttpRequest();
     xhr.open('GET', "https://api.hypixel.net/skyblock/auctions", true);
     xhr.send();
