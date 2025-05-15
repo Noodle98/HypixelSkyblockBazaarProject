@@ -607,14 +607,70 @@ let raw_items = {
     "FULL_JAW_FANGING_KIT": "Full-Jaw Fanging Kit",
     "AMALGAMATED_CRIMSONITE_NEW": "Amalgamated Crimsonite",
     "CAPSAICIN_EYEDROPS_NO_CHARGES": "Capsaicin Eyedrops",
+    "FRESHLY_MINTED_COINS": "Freshly-Minted Coins",
+
 }
     let itemsSorted = {}
     
-    for (const item in raw_items) {
-        itemsSorted[raw_items[item].toLowerCase()] = item;
+
+    for (const [key, value] of Object.entries(raw_items)) {
+        itemsSorted[value.toLowerCase()] = key;
     }
+
+    //for (const item in raw_items) {
+    //    itemsSorted[raw_items[item].toLowerCase()] = item;
+    //}
     //console.log(itemsSorted['Enchanted Mithril']);
     //console.log(itemsSorted['Mithril']);
+    let itemNameVariants = {
+        "Freshly Minted Coins": "FRESHLY_MINTED_COINS",
+        "Fang tastic Chocolate Chip": "CHOCOLATE_CHIP",
+        "Fangtastic Chocolate Chip": "CHOCOLATE_CHIP",
+        "Full Jaw Fanging Kit": "FULL_JAW_FANGING_KIT",
+        "FullJaw Fanging Kit": "FULL_JAW_FANGING_KIT",
+        "Jacobs Ticket": "JACOBS_TICKET",
+        "Jacob Ticket": "JACOBS_TICKET",
+        "Emperors Skull": "DIVER_FRAGMENT",
+        "Emperor Skull": "DIVER_FRAGMENT",
+        "Horsemans Candle": "HORSEMAN_CANDLE",
+        "Horseman Candle": "HORSEMAN_CANDLE",
+        "Sadans Brooch": "SADAN_BROOCH",
+        "Sadan Brooch": "SADAN_BROOCH",
+        "Pitchin Koi": "PITCHIN_KOI",
+        "Pitching Koi": "PITCHIN_KOI",
+        "Necromancers Brooch": "NECROMANCER_BROOCH",
+        "Necromancer Brooch": "NECROMANCER_BROOCH",
+        "Terrys Snowglobe": "TERRY_SNOWGLOBE",
+        "Terry Snowglobe": "TERRY_SNOWGLOBE",
+        "Diamantes Handle": "GIANT_FRAGMENT_DIAMOND",
+        "Diamante Handle": "GIANT_FRAGMENT_DIAMOND",
+        "Arachnes Calling": "ARACHNE_KEEPER_FRAGMENT",
+        "Arachne Calling": "ARACHNE_KEEPER_FRAGMENT",
+        "Bobbin Scriptures": "BOBBIN_SCRIPTURES",
+        "Bobbing Scriptures": "BOBBIN_SCRIPTURES",
+        "Bigfoots Lasso": "GIANT_FRAGMENT_BIGFOOT",
+        "Bigfoot Lasso": "GIANT_FRAGMENT_BIGFOOT",
+        "Blast O Lantern": "PUMPKIN_BOMB",
+        "Blast Lantern": "PUMPKIN_BOMB",
+        "L.A.S.R.s Eye": "GIANT_FRAGMENT_LASER",
+        "LASRs Eye": "GIANT_FRAGMENT_LASER",
+        "L.A.S.R. Eye": "GIANT_FRAGMENT_LASER",
+        "LASR Eye": "GIANT_FRAGMENT_LASER",
+        "LASR's Eye": "GIANT_FRAGMENT_LASER",
+        "LASER's Eye": "GIANT_FRAGMENT_LASER",
+        "LASERs Eye": "GIANT_FRAGMENT_LASER",
+        "LASER Eye": "GIANT_FRAGMENT_LASER",
+        "LAZER's Eye": "GIANT_FRAGMENT_LASER",
+        "LAZERs Eye": "GIANT_FRAGMENT_LASER",
+        "LAZER Eye": "GIANT_FRAGMENT_LASER"
+
+        
+    }
+
+    for (const [key, value] of Object.entries(itemNameVariants)) {
+        itemsSorted[key.toLowerCase()] = value;
+    }
+    console.log(itemsSorted["Sadan Brooch"]);
 
     let itemNames = itemsSorted;
 

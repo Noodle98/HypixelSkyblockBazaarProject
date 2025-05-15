@@ -21,16 +21,17 @@
     <a href="#about">About</a-->
   </div>
 <h1>Welcome to Noodle's Hypixel Skyblock Stats calculator</h1>
-
-<p>Please enter your current stats in the following entry boxes</p>
-<label for="maxHP">Max Health</label>
-<input type="number" id="maxHP">
-<label for="healthRegen">Health Regen</label>
-<input type="text" id="healthRegen">
-<label for="vitality">Vitality</label>
-<input type="text" id="vitality">
-<button id="health_stats_save" type="button">Save</button>
-<p class="healthStats" id="naturalRegenAmount">HP healed per natural health regen tick (every 2 sec): 0</p>
+<div class="statsDiv" id="naturalRegenTick">
+  <p class="pleaseInput">Please enter your current stats in the following entry boxes</p>
+  <label for="maxHP">Max Health</label>
+  <input type="number" id="maxHP">
+  <label for="healthRegen">Health Regen</label>
+  <input type="text" id="healthRegen">
+  <label for="vitality">Vitality</label>
+  <input type="text" id="vitality">
+  <button id="healthStatsSave" type="button">Save</button>
+  <p id="naturalRegenAmount">HP healed per natural health regen tick (every 2 sec): 0</p>
+</div>
 
 </body>
 </html>
