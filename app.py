@@ -781,8 +781,6 @@ raw_items = {
 
 items = list(raw_items.values())
 
-print(items)
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -792,6 +790,18 @@ def search():
     query = request.args.get('q', '').lower()
     results = [item for item in items if query in item.lower()]
     return jsonify(results[:5])  # Limit to top 5 matches
+
+@app.route('/moneyMethods')
+def money_methods():
+    return render_template('moneyMethods.html')
+
+@app.route('/testingStuff')
+def testing_stuff():
+    return render_template('testingStuff.html')
+
+@app.route('/statsCalculator')
+def stats_calculator():
+    return render_template('statsCalculator.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

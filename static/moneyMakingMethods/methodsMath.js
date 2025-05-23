@@ -1,4 +1,4 @@
-import itemNames from '../bazaar/bazaarItems.js';
+import itemNames from '/static/bazaar/bazaarItems.js';
 function gemstoneMixtureCalc(data, amount, bazaarFlipperLevel) {
     //console.log(data);
     //console.log(itemNames['gemstone mixture']['sell_summary'][0]['pricePerUnit']);

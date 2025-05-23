@@ -1,5 +1,5 @@
-import itemNames from '../bazaar/bazaarItems.js';
-import { gemstoneMixtureCalc, enchLavaBucketCalc } from './methodsMath.js';
+import itemNames from '/static/bazaar/bazaarItems.js';
+import { gemstoneMixtureCalc, enchLavaBucketCalc } from '/static/moneyMakingMethods/methodsMath.js';
 //import testingAuctions from './activeAuctions.js';
 const bazaarItemNames = itemNames;
 
@@ -37,6 +37,11 @@ function loadJSON(path, success, amountArg = null) {
     xhr.send();
 
     xhr.onreadystatechange = function () {
+      const responseText = xhr.responseText;
+
+    // Debug log
+    console.log('Raw response:', responseText);
+    
       if (xhr.readyState == 4 && xhr.status == 200) {
         if (amountArg == null) {
           success(JSON.parse(xhr.responseText));
@@ -137,6 +142,3 @@ document.querySelector("#GemstoneMixtureButton").addEventListener('click', gemst
 document.querySelector("#EnchLavaBucketButton").addEventListener('click', enchbucketcalc);
 
 document.querySelector("#switchLighting").addEventListener('click', switchLighting);
-
-
-

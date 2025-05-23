@@ -45,4 +45,9 @@ function parsingAllData(hypixelData) {
 function checkForNewItems() {
     loadJSON("https://api.hypixel.net/skyblock/bazaar", parsingAllData);
 }
-document.querySelector('#new_items_button').addEventListener('click', checkForNewItems);
+document.addEventListener("DOMContentLoaded", function () {
+    const el = document.getElementById("new_items_button");
+    if (el) {
+        el.addEventListener("click", checkForNewItems);
+    }
+});

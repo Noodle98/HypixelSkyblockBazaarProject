@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script async type="module" src="../bazaar/bazaarItems.js"></script>
-<script async type="module" src="../main.js"></script>
-<script async type="module" src="../parseUserInput.js"></script>
-<script async type="module" src="../bazaar/checkForNewBazaarItems.js"></script>
-<script async type="module" src="../static/darkmode.js"></script>
+<script async type="module" src="{{ url_for('static', filename='bazaar/bazaarItems.js') }}"></script>
+<script async type="module" src="{{ url_for('static', filename='main.js') }}"></script>
+<script async type="module" src="{{ url_for('static', filename='parseUserInput.js') }}"></script>
+<script async type="module" src="{{ url_for('static', filename='bazaar/checkForNewBazaarItems.js') }}"></script>
+<script async type="module" src="{{ url_for('static', filename='darkmode.js') }}"></script>
 <!---script type="module" src="./userInputAndStart.js" defer></script -->
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <title>Bazaar Price Checker</title>
 <style>
   body {
@@ -68,10 +68,10 @@
 <body>
   <div class="topnav">
     <div id="pages">
-      <a href="index.html">Bazaar Price Checker</a>
-      <a class="active" href="../moneyMakingMethods/moneyMethods.html">Money Making Methods</a>
-      <a href="../testingStuff.html">Testing Active Auctions</a>
-      <a href="../statsCalculator.html">Stats Calculator</a>
+      <a class="active" href="{{ url_for('index') }}">Bazaar Price Checker</a>
+      <a href="{{ url_for('money_methods') }}">Money Making Methods</a>
+      <a href="{{ url_for('testing_stuff') }}">Testing Active Auctions</a>
+      <a href="{{ url_for('stats_calculator') }}">Stats Calculator</a>
     </div>
       <button type="button" id="switchLighting">Switch Lighting</button>
     <!--a href="#contact">Contact</a>
@@ -81,7 +81,7 @@
 <p>Please enter an item name and click the Search button.</p>
 <input type="text" id="item_input" placeholder="Search..." autocomplete="off">
 <ul id="results"></ul>
-<script src="../static/search.js"></script>
+<script type="module" src="{{ url_for('static', filename='search.js') }}"></script>
 <button id="item_input_button" type="button">Search</button>
 <p id="buy_order_price"></p>
 <p id="sell_offer_price"></p>

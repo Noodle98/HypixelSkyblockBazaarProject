@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../styles.css">
-        <script async type="module" src="../auctions/activeAuctions.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script async type="module" src="{{ url_for('static', filename='auctions/activeAuctions.js') }}"></script>
     </head>
     <body>
         <div class="topnav">
             <div id="pages">
-              <a href="index.html">Bazaar Price Checker</a>
-              <a class="active" href="../moneyMakingMethods/moneyMethods.js">Money Making Methods</a>
-              <a href="./testingStuff.html">Testing Active Auctions</a>
+              <a href="{{ url_for('index') }}">Bazaar Price Checker</a>
+              <a href="{{ url_for('money_methods') }}">Money Making Methods</a>
+              <a class="active" href="{{ url_for('testing_stuff') }}">Testing Active Auctions</a>
+              <a href="{{ url_for('stats_calculator') }}">Stats Calculator</a>
             </div>
               <button type="button" id="switchLighting">Switch Lighting</button>
             <!--a href="#contact">Contact</a>

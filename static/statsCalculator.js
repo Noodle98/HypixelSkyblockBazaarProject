@@ -14,3 +14,9 @@ function healthRegenCalc() {
 
 // EventListener to call healthRegenCalc() when health_stats_save button is clicked
 document.querySelector("#healthStatsSave").addEventListener("click", healthRegenCalc);
+document.addEventListener("DOMContentLoaded", function () {
+    const el = document.querySelector("#healthStatsSave");
+    if (el) {
+        el.addEventListener("click", healthRegenCalc);
+    }
+});

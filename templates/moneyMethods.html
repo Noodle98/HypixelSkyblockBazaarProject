@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script async type="module" src="bazaarItems.js"></script>
-<script async type="module" src="moneyMethods.js"></script>
-<script async type="module" src="parseUserInput.js"></script>
-<script async type="module" src="methodsMath.js"></script>
-<!--<script async type="module" src="activeAuctions.js"></script> -->
-<!---script type="module" src="./userInputAndStart.js" defer></script -->
+<script async type="module" src="{{ url_for('static', filename='bazaar/bazaarItems.js') }}"></script>
+<script async type="module" src="{{ url_for('static', filename='moneyMakingMethods/moneyMethods.js') }}"></script>
+<script async type="module" src="{{ url_for('static', filename='parseUserInput.js') }}"></script>
+<script async type="module" src="{{ url_for('static', filename='moneyMakingMethods/methodsMath.js') }}"></script>
+<script async type="module" src="{{ url_for('static', filename='darkmode.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <title>Money Making Methods</title>
 <style>
   body {
@@ -98,9 +98,10 @@
 <div class="wholePage">
   <div class="topnav">
     <div id="pages">
-      <a href="index.html">Bazaar Price Checker</a>
-      <a class="active" href="./moneyMethods.html">Money Making Methods</a>
-      <a href="../testingStuff.html">Testing Active Auctions</a>
+      <a href="{{ url_for('index') }}">Bazaar Price Checker</a>
+      <a class="active" href="{{ url_for('money_methods') }}">Money Making Methods</a>
+      <a href="{{ url_for('testing_stuff') }}">Testing Active Auctions</a>
+      <a href="{{ url_for('stats_calculator') }}">Stats Calculator</a>
     </div>
     <div id="topSelectors">
       <p>Select your Bazaar Flipper upgrade level at Elizabeth</p>
@@ -156,15 +157,15 @@
       <p class="startText">First go to the bazaar in the hub, or do "/bz" in chat without quotations if you have booster cookie buff</h2>
       <p class="startText">Once you're at the bazaar, start by finding the item you want to buy.</p>
       <p class="pictureGuiding">Then click the "Create Buy Order" button, shown in the red box in the picture below.</p>
-      <img src="/imgs/gemstoneMixture/guideCreateBuyOrderButton.png" alt="Picture showing the 'Create Buy Order' button in the bazaar">
+      <img src="{{ url_for('static', filename='imgs/gemstoneMixture/guideCreateBuyOrderButton.png') }}" alt="Picture showing the 'Create Buy Order' button in the bazaar">
       <p class="pictureGuiding">Then click the "Custom Amount" button, shown in the red box in the picture below, and type in your amount.</p>
-      <img src="/imgs/gemstoneMixture/guideBuyOrderAmountButton.png" alt="Picture showing the 'Custom Amount' button in the bazaar.">
+      <img src="{{ url_for('static', filename='imgs/gemstoneMixture/guideBuyOrderAmountButton.png') }}" alt="Picture showing the 'Custom Amount' button in the bazaar.">
       <p class="pictureGuiding">Now select the "Top Order +0.1" price option, shown in the red box in the picture below.</p>
-      <img src="/imgs/gemstoneMixture/guidePriceOvercutButton.png" alt="Picture showing the 'Top Order +0.1' price button in the bazaar">
+      <img src="{{ url_for('static', filename='imgs/gemstoneMixture/guidePriceOvercutButton.png') }}" alt="Picture showing the 'Top Order +0.1' price button in the bazaar">
       <p class="pictureGuiding">Lastly, just choose the "Buy Order" button, to finish the buy order.</p>
-      <img src="/imgs/gemstoneMixture/guideConfirmOrderButton.png" alt="Picture showing the 'Buy Order' confirm button in the bazaar.">
+      <img src="{{ url_for('static', filename='imgs/gemstoneMixture/guideConfirmOrderButton.png') }}" alt="Picture showing the 'Buy Order' confirm button in the bazaar.">
       <p class="pictureGuiding">You can view, claim, and cancel all your orders in the bazaar, shown in the red box in the picture below.</p>
-      <img src="/imgs/Bazaar/manageOrdersButton.png" alt="Picture showing the 'Manage Orders' button in the bazaar.">
+      <img src="{{ url_for('static', filename='imgs/Bazaar/manageOrdersButton.png') }}" alt="Picture showing the 'Manage Orders' button in the bazaar.">
     </div>
   </div>
   <div class="moneyMethods">

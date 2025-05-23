@@ -61,7 +61,13 @@ function speak() {
     
 }
 
-document.querySelector('#item_input_button').addEventListener('click', speak);
+document.addEventListener("DOMContentLoaded", function () {
+    const el = document.querySelector('#item_input_button');
+    if (el) {
+        el.addEventListener("click", speak);
+    }
+});
+
 //document.querySelector("#switchToMoneyMethods").addEventListener('click', switchtoMoneyMethods);
 
 

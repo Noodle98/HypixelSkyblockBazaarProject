@@ -15,4 +15,9 @@ function switchLighting(){
 }
 
 window.onload = callOnLoad;
-document.querySelector("#switchLighting").addEventListener('click', switchLighting);
+document.addEventListener("DOMContentLoaded", function () {
+    const el = document.querySelector('#switchLighting');
+    if (el) {
+        el.addEventListener("click", switchLighting);
+    }
+});
