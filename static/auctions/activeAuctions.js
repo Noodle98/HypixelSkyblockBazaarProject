@@ -67,4 +67,4 @@ function testingAuctions() {
 }
 
 export default testingAuctions;
-document.querySelector("#TEST").addEventListener('click', testingAuctions);
+//document.querySelector("#TEST").addEventListener('click', testingAuctions);
