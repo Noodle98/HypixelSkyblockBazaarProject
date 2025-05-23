@@ -1,4 +1,4 @@
-import itemNames from './bazaarItems.js';
+import itemNames from './bazaar/bazaarItems.js';
 export default function parseUserInput(raw_input) {
     let inputArray = raw_input.toLowerCase().split(" ");
 

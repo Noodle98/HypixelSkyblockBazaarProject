@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script async type="module" src="../bazaar/bazaarItems.js"></script>
+<script async type="module" src="../main.js"></script>
+<script async type="module" src="../parseUserInput.js"></script>
+<script async type="module" src="../bazaar/checkForNewBazaarItems.js"></script>
+<!---script type="module" src="./userInputAndStart.js" defer></script -->
+<link rel="stylesheet" href="../styles.css">
+<title>Bazaar Price Checker</title>
+<style>
+  body {
+    margin: 0px;
+    background-color: white;
+    color: black;
+    }
+    .dark-mode {
+    color: lightgray;
+    background-color: #2E4053;
+    }
+
+    .topnav {
+    background: #54769b;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    flex-grow: 1;
+    width: 100%;
+    z-index: 1;
+    height: 5%;
+   }
+    
+    a:link {color: white;}  
+    a:visited {color: lightblue;} 
+    a:hover {color: #0cfce8;} 
+    a:active {color: #50fc0c;}  
+
+    #switchLighting {
+      float: right;
+    }
+
+    .imageGuiding {
+    padding-right: 2%;
+   }
+
+   .topnav #pages {
+    padding: 8px;
+   }
+
+   #pages {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+   }
+   
+   .topnav a {
+    text-decoration: none;
+   }
+
+   .topnav a:hover {
+    text-decoration: underline;
+   }
+  
+</style>
+</head>
+<body>
+  <div class="topnav">
+    <div id="pages">
+      <a href="index.html">Bazaar Price Checker</a>
+      <a class="active" href="../moneyMakingMethods/moneyMethods.html">Money Making Methods</a>
+      <a href="../testingStuff.html">Testing Active Auctions</a>
+      <a href="../statsCalculator.html">Stats Calculator</a>
+    </div>
+      <button type="button" id="switchLighting">Switch Lighting</button>
+    <!--a href="#contact">Contact</a>
+    <a href="#about">About</a-->
+  </div>
+<h1>Welcome to Noodle's Hypixel Skyblock Bazaar profit calculator</h1>
+<p>Please enter an item name and click the Search button.</p>
+<input type="text" id="item_input" placeholder="Search..." autocomplete="off">
+<ul id="results"></ul>
+<script src="../static/search.js"></script>
+<button id="item_input_button" type="button">Search</button>
+<p id="buy_order_price"></p>
+<p id="sell_offer_price"></p>
+<h3>Click the button below to check for any new bazaar items, that need to be added to this website's data</h3>
+<button id="new_items_button" type="button">Check</button>
+<p id="new_items_array"></p>
+<p id="whatIsThisItem"></p>
+</body>
+</html>
