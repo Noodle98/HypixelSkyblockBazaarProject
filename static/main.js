@@ -40,8 +40,15 @@ function mainData(Data, itemName, rawUserInput)
     let buyOrderPrice = Data['products'][itemName]['sell_summary'][0]['pricePerUnit'];
     let sellOfferPrice = Data['products'][itemName]['buy_summary'][0]['pricePerUnit'];
 
-    document.getElementById('buy_order_price').innerHTML = `Current buy order (instant sell) price for ${itemName} is: ${buyOrderPrice.toLocaleString("en-US")} coins.`;
-    document.getElementById('sell_offer_price').innerHTML = `Current sell offer (instant buy) price for ${itemName} is: ${sellOfferPrice.toLocaleString("en-US")} coins.`;
+    const preLi = document.getElementById('inputResultPre');
+    const results = document.getElementById('results');
+
+    document.getElementById('buy_order_price').innerHTML = `Current buy order (instant sell) price for ${rawUserInput} is: ${buyOrderPrice.toLocaleString("en-US")} coins.`;
+    document.getElementById('sell_offer_price').innerHTML = `Current sell offer (instant buy) price for ${rawUserInput} is: ${sellOfferPrice.toLocaleString("en-US")} coins.`;
+
+    preLi.innerHTML = '';
+    results.innerHTML = '';
+
   }
 // speak() function which is called by the HTML code,
 // And parses user input, and then passes it along to

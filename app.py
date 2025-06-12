@@ -805,3 +805,6 @@ def stats_calculator():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+input("Press Enter to exit...")  # Keep the script running until Enter is pressed

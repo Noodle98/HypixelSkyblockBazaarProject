@@ -6,6 +6,7 @@
 <script async type="module" src="{{ url_for('static', filename='parseUserInput.js') }}"></script>
 <script async type="module" src="{{ url_for('static', filename='bazaar/checkForNewBazaarItems.js') }}"></script>
 <script async type="module" src="{{ url_for('static', filename='darkmode.js') }}"></script>
+<script async type="module" src="{{ url_for('static', filename='testSearch.js') }}"></script>
 <!---script type="module" src="./userInputAndStart.js" defer></script -->
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <title>Bazaar Price Checker</title>
@@ -80,6 +81,7 @@
 <h1>Welcome to Noodle's Hypixel Skyblock Bazaar profit calculator</h1>
 <p>Please enter an item name and click the Search button.</p>
 <input type="text" id="item_input" placeholder="Search..." autocomplete="off">
+<p id="inputResultPre"></p>
 <ul id="results"></ul>
 <script type="module" src="{{ url_for('static', filename='search.js') }}"></script>
 <button id="item_input_button" type="button">Search</button>

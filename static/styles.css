@@ -80,3 +80,8 @@ body {
    .imageGuiding {
     padding-right: 2%;
    }
+
+   #inputResultPre {
+    font-style: italic;
+    padding-left: 2%
+   }

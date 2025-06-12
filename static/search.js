@@ -21,9 +21,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 const data = await response.json();
 
                 resultsEl.innerHTML = '';
+                const preLi = document.getElementById('inputResultPre');
+                preLi.textContent = 'Did you mean?... (click to select)';
                 data.forEach(item => {
                     const li = document.createElement('li');
                     li.textContent = item;
+                    li.onclick = () => {
+                    searchInput.value = item;
+                    resultsEl.innerHTML = '';
+                    preLi.textContent = '';
+                    };
                     resultsEl.appendChild(li);
                 });
             } catch (err) {
